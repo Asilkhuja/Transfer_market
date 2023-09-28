@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 
 #Создать компонент
-agent_router = APIRouter(prefix='/agent', tags=['Управление пользователями'])
+agent_router = APIRouter(prefix='/agent', tags=['Управление аккаунтом агента'])
 
 #Запрос на вход в аккаунт
 @agent_router.post('/login')
