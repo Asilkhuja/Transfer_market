@@ -2,8 +2,8 @@ from pydantic import BaseModel
 
 
 #Валидатор заключения
-class ConcludionModel(BaseModel):
-    sonclusion_text: str
+class ConclusionModel(BaseModel):
+    conclusion_text: str
     agent_id: int
 
 

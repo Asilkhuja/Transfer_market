@@ -27,4 +27,3 @@ async def get_all_colleagues(agent_id: int):
 async def get_exact_colleague(colleague_id: int):
     pass
 
-#python41Potok

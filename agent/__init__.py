@@ -18,8 +18,9 @@ class AgentLoginModel(BaseModel):
     password: str
 
 
-#Валидатор для изменения агента
+#Валидатор для изменения данных агента
 class AgentChangeModel(BaseModel):
     agent_id: int
+    edit_info: str
     new_info: str
 

@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from scout_conclusion import ConcludionModel, EditConclusionModel
+from scout_conclusion import ConclusionModel, EditConclusionModel
 
 
 #Создать компонент
@@ -9,7 +9,7 @@ conclusion_router = APIRouter(prefix='/comment', tags=['Работа со ска
 
 #Запрос на публикацию заключение
 @conclusion_router.post('/add_conclusion')
-async def add_conclusion(data: ConcludionModel):
+async def add_conclusion(data: ConclusionModel):
     pass
 
 
