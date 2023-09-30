@@ -1,4 +1,4 @@
-from database.models import Agent
+from datetime import datetime
 
 from database.models import Agent
 from database import get_db
@@ -15,7 +15,7 @@ def register_agent_db(name, surname, email, phone_number, city, password):
 
     new_agent = Agent(name=name, surname=surname,
                       email=email, phone_number=phone_number,
-                      city=city, password=password)
+                      city=city, password=password, reg_date=datetime.now())
 
     db.add(new_agent)
     db.commit()

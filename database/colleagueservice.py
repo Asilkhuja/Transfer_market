@@ -4,7 +4,7 @@ from datetime import datetime
 from database import get_db
 
 #Добавить коллегу
-def add_conclusion_db(name, surname, email, phone_number, city):
+def add_colleague_db(name, surname, email, phone_number, city):
     db = next(get_db())
 
     new_colleague = Colleague(name=name, surname=surname, email=email, phone_number=phone_number, city=city)
@@ -16,7 +16,7 @@ def add_conclusion_db(name, surname, email, phone_number, city):
 
 
 #Удалить коллегу
-def delete__db(colleague_id):
+def delete_colleague_db(colleague_id):
     db = next(get_db())
 
     exact_colleague = db.query(Colleague).filter_by(id=colleague_id).first()
@@ -39,9 +39,9 @@ def get_exact_colleague_db(colleague_id):
 
 
 #Показать всех коллег
-def get_all_colleagues(agent_id):
+def get_all_colleagues_db():
     db = next(get_db())
 
-    all_colleagues = db.query(Colleague).filter_by(id=agent_id).all()
+    all_colleagues = db.query(Colleague).all()
 
     return all_colleagues

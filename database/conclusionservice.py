@@ -30,13 +30,13 @@ def delete_conclusion_db(conclusion_id):
 
 
 #Изменить определенное заключение
-def change_conclusion_db(conclusion_id, new_conclusion):
+def change_conclusion_db(conclusion_id, new_text):
     db = next(get_db())
 
-    exact_conclusion = db.query(Scout_conclusion).filter_by(id=conclusion_id).first()
+    exact_conclusion = db.query(Scout_conclusion).filter_by(id=conclusion_id,).first()
 
     if exact_conclusion:
-        exact_conclusion.conclusion_text = new_conclusion
+        exact_conclusion.conclusion_text = new_text
         db.commit()
 
         return 'Заключение успешно изменен'

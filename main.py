@@ -7,6 +7,10 @@ from player_column.player_column_api import player_column_router
 from agent.agent_api import agent_router
 
 
+#Ждя запуска БД
+from database import Base, engine
+Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(docs_url='/')
 

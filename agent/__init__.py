@@ -3,10 +3,10 @@ from pydantic import BaseModel
 
 #Валидатор для регистрации
 class AgentRegisterModel(BaseModel):
-    agent_name: str
-    agent_surname: str
+    name: str
+    surname: str
     phone_number: int
-    mail: str
+    email: str
     city: str
     password: str
 
@@ -14,7 +14,7 @@ class AgentRegisterModel(BaseModel):
 
 #Валидатор для логина
 class AgentLoginModel(BaseModel):
-    agent_mail: str
+    email: str
     password: str
 
 

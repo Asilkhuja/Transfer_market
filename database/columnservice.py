@@ -46,9 +46,14 @@ def edit_column_db(column_id, agent_id, new_text):
 #Удалить колонку
 def delete_column_db(column_id):
     db = next(get_db())
+
     exact_column = db.query(Player_Column).filter_by(id=column_id).first()
+    exact_column_photos = db.query(PlayerPhoto).filter_by(column_id=column_id).all()
 
     if exact_column:
+        db.delete(*exact_column_photos)
+        db.commit()
+
         db.delete(exact_column)
         db.commit()
 
@@ -57,7 +62,7 @@ def delete_column_db(column_id):
     return False
 
 #Получить все колонки
-def get_all_columns():
+def get_all_columns_db():
     db = next(get_db())
 
     all_columns = db.query(Player_Column).all()

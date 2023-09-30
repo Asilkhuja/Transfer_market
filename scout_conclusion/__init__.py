@@ -3,8 +3,9 @@ from pydantic import BaseModel
 
 #Валидатор заключения
 class ConclusionModel(BaseModel):
-    conclusion_text: str
+    text: str
     agent_id: int
+    column_id: int
 
 
 #Валидатор на изменение заключения
